@@ -7,7 +7,7 @@ export default function Weather() {
   const [error, setError] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
-  const API_KEY = "d0d3eed219316b96b41c8fb071ed65fb";
+  const WEATHER_API_KEY = "d0d3eed219316b96b41c8fb071ed65fb";
 
   const fetchSuggestions = async (query) => {
     if (query.length < 2) {
@@ -16,7 +16,7 @@ export default function Weather() {
     }
     try {
       const res = await axios.get(
-        `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${API_KEY}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${WEATHER_API_KEY}`
       );
 
       setSuggestions(res.data);
@@ -30,7 +30,7 @@ export default function Weather() {
       setError("");
 
       const res = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${WEATHER_API_KEY}&units=metric`
       );
 
       setWeather(res.data);
