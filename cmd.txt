@@ -1,0 +1,4 @@
+ npm create vite@latest
+ npm run dev
+ npm i axios
+ npm i react-router (https://reactrouter.com/start/declarative/routing)
